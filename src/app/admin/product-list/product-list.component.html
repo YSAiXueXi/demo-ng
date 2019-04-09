@@ -1,0 +1,35 @@
+<div class="container">
+    <hr>
+    
+    <a [routerLink]="['/admin/product-create']" routerLinkActive="active" class="btn btn-danger">添加商品</a>
+    
+  <table>
+    <thead class="table">
+      <tr>
+        <th>名称</th>
+        <th>详细</th>
+        <th>价格</th>
+        <th>操作</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let product of products">
+        <td> {{ product.title }}</td>
+        <td> {{ product.detail }}</td>
+        <td> {{ product.price }}</td>
+        <td>
+          <!-- 方法一
+          <button class="btn btn-primary" (click)="editProduct(product)">编辑</button> -->
+          
+          <a class="btn btn-primary" [routerLink] = "['/admin/product-edit/', product._id]" >编辑</a>
+          <!-- 方法二 -->
+          <!-- <a class="btn btn-primary" [routerLink] = "['/product-edit/']" [queryParams]= "{id: product.id}" >编辑</a> -->
+           
+          <button class="btn btn-danger" style="margin-left: 2rem" (click)="deleteProduct(product._id)">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  </div>

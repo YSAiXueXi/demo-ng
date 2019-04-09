@@ -1,0 +1,30 @@
+<div class="container">
+
+  <h2 class="text-center text-danger">添加商品</h2>
+
+  <form [formGroup]= "myForm" (ngSubmit)="onSubmit()">
+    <!-- <div class="formGroup">
+      <label for="id">商品编号：</label>
+      <input type="text" formControlName = "id" placeholder="商品Id" name="id" class="form-control" id="id">
+    </div> -->
+    <div class="formGroup">
+      <label for="title">商品名称：</label>
+      <input type="text" formControlName = "title" placeholder="商品名称" name="title" class="form-control" id="title">
+      <div class="text-danger" 
+       *ngIf="myForm.controls.title.invalid && myForm.controls.dirty">
+        商品名称不能为空
+      </div>
+    </div>
+    <div class="formGroup">
+      <label for="detail">商品详情：</label>
+      <input type="text" formControlName="detail" placeholder="商品详情" name="detail" class="form-control" id="detail">
+    </div>
+    <div class="formGroup">
+      <label for="price">商品价格：</label>
+      <input type="text" formControlName="price" placeholder="商品价格" name="price" class="form-control" id="price">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]= "!myForm.valid">添加商品</button>
+    <a [routerLink]= "['/admin/product-list']" class="btn btn-danger float-right">返回</a>
+  </form>
+
+</div>

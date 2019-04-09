@@ -1,0 +1,22 @@
+<nz-layout class="layout">
+
+  <app-topbar>  </app-topbar>
+  
+  <nz-layout>
+    <nz-sider [nzWidth]="200" style="background:#fff">
+
+      <app-leftbar>   </app-leftbar>
+
+    </nz-sider>
+    <nz-layout style="padding:0 24px 24px">
+
+      <nz-content style="background:#fff; padding: 24px; min-height: 600px;">
+
+        <router-outlet></router-outlet>
+
+      </nz-content>
+
+    </nz-layout>
+
+  </nz-layout>
+</nz-layout>

@@ -1,0 +1,19 @@
+<nz-header>
+  <div class="logo"></div>
+  <ul nz-menu [nzTheme]= "'dark'" [nzMode]= "'horizontal'" style="line-height: 64px;">
+    <li nz-menu-item>
+      <a [routerLink]="['/admin/product-list']">
+        <i nz-icon type="user"> </i> 商品中心
+      </a>
+    </li>
+    <li nz-menu-item>
+      <a [routerLink] = "['/admin/product-create']">
+        <i i nz-icon type="shopping"></i>添加商品
+      </a>
+    </li>
+    <li nz-menu-item>
+      <span title>
+        <i nz-icon type="notification"></i>订单中心</span>
+    </li>
+  </ul>
+</nz-header>
